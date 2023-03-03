@@ -6,3 +6,4 @@
 /.vscode
 .env
 node_modules
+migrations

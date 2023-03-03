@@ -9,7 +9,7 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 router.get('/ping', asyncHandler(async(req, res) => {
-
+  res.json({'status': 'good'})
 }))
 
 router.get('/:id', asyncHandler(async(req, res) => {
