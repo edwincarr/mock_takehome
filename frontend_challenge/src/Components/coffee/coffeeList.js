@@ -2,10 +2,12 @@ import './coffee.css'
 import { useEffect } from 'react'
 import mug from '../assets/svgs/mug.svg'
 import useCoffeeStore from '../../services/coffeeStore.js'
+import usePostStore from '../../services/postStore.js'
 
 const CoffeeList = () => {
   const coffeeList = useCoffeeStore((state) => state.coffeeList)
   const updateCoffee = useCoffeeStore((state) => state.fetch)
+  const updatePost = usePostStore((state) => state.fetch)
   const deleteCoffee = useCoffeeStore((state) => state.delete)
   const clearState = useCoffeeStore((state) => state.clear)
 
@@ -17,6 +19,7 @@ const CoffeeList = () => {
   const coffeeDelete = (id) => {
     deleteCoffee(id).then(() => {
       updateCoffee()
+      updatePost()
     })
   }
 

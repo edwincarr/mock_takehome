@@ -30,7 +30,7 @@ const PostList = () => {
             <h3>{post.title}</h3>
             <p>{post.rating}</p>
             <p>{post.text}</p>
-            <p>{post.coffee_relation.name} - {post.coffee_relation.caffine_percentage*8} mg per oz</p>
+            <p>{post.coffee_relation.name} - {post.coffee_relation.caffine_percentage} mg per oz</p>
           </div>
         )
       })}
