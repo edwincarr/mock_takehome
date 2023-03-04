@@ -1,4 +1,6 @@
 const express = require('express')
+const cors = require('cors');
+const helmet = require('helmet');
 const coffeeRouter = require('./routers/coffee.js')
 const postRouter = require('./routers/posts.js')
 
@@ -8,6 +10,13 @@ const app = express()
 const port = process.env.PORT
 
 app.use(express.json())
+
+app.use(cors())
+app.use(
+  helmet.crossOriginResourcePolicy({
+    policy: "cross-origin"
+  })
+)
 
 app.use('/coffee', coffeeRouter)
 app.use('/post', postRouter)
