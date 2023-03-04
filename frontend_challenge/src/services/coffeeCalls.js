@@ -6,9 +6,14 @@ const getCoffee = async (order) => {
     headers: {
       "Content-Type": "application/json",
     },
-    data: JSON.stringify({order})
+    params: {order}
   })
   return coffees.data
 }
 
-export { getCoffee }
+const deleteCoffee = async (id) => {
+  const coffee = await instance.delete(`coffee/delete/${id}`)
+  return coffee.data
+}
+
+export { getCoffee, deleteCoffee }

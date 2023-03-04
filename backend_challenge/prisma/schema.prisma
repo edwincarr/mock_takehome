@@ -23,7 +23,7 @@ model Coffee {
 model Post {
   id Int @id @default(autoincrement())
   title String
-  coffee_relation Coffee @relation( fields:[coffeeId] ,references: [id])
+  coffee_relation Coffee @relation( fields:[coffeeId] ,references: [id], onUpdate: Cascade, onDelete: Cascade)
   coffeeId Int
   text String
   rating Float

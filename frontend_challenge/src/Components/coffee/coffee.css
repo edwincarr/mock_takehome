@@ -1,0 +1,22 @@
+.coffee-container {
+  display: flex;
+  border-bottom: solid 2px #9f5315;
+  border-left: solid 2px #9f5315;
+  border-top-left-radius: 8px;
+  padding: 10px;
+}
+.coffee-name {
+  font-weight: 600;
+}
+.coffee-delete {
+  opacity: 0;
+  cursor: pointer;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: 2px solid #9f5315;
+  padding: 1px 8px;
+  margin-left: 20px;
+}
+.coffee-container:hover > .coffee-delete {
+  opacity: 1;
+}

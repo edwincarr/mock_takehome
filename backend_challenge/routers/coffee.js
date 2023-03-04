@@ -5,7 +5,7 @@ const asyncHandler = require('express-async-handler');
 const prisma = new PrismaClient()
 
 router.get('/', asyncHandler(async(req, res) => {
-  const { order } = req.body
+  const order = req.query.order
   const orderBy = order ? order : 'asc';
 
   const coffees = await prisma.coffee.findMany({
@@ -50,7 +50,7 @@ router.delete('/delete/:id', asyncHandler(async(req, res) => {
   const { id } = req.params
 
   const deletion = await prisma.coffee.delete({
-    where: {id: Number(id)}
+    where: {id: Number(id)},
   })
   res.json(deletion)
   console.log('DELETE /coffee/delete/:id')
