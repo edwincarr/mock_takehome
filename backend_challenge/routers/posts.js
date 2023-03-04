@@ -5,7 +5,8 @@ const asyncHandler = require('express-async-handler');
 const prisma = new PrismaClient()
 
 router.get('/', asyncHandler(async(req, res) => {
-  const { order } = req.body
+  const order = req.query.order
+  console.log(order)
   const orderBy = order ? order : 'asc';
 
   const posts = await prisma.post.findMany({

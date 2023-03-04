@@ -6,6 +6,7 @@ const prisma = new PrismaClient()
 
 router.get('/', asyncHandler(async(req, res) => {
   const order = req.query.order
+  
   const orderBy = order ? order : 'asc';
 
   const coffees = await prisma.coffee.findMany({
