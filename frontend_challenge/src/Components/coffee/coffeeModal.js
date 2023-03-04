@@ -1,6 +1,6 @@
 import './coffee.css'
 import { useState } from 'react'
-import useCoffeeStore from '../../services/store.js'
+import useCoffeeStore from '../../services/coffeeStore.js'
 
 const CoffeeModal = ({open}) => {
   const createCoffee = useCoffeeStore((state) => state.create)
@@ -15,7 +15,7 @@ const CoffeeModal = ({open}) => {
   const submitCoffeeForm = (e) => {
     e.preventDefault()
     const data = {name, year, caffine}
-    createCoffee(data).then(e => {
+    createCoffee(data).then(() => {
       updateCoffee()
     }
     )

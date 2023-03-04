@@ -15,12 +15,12 @@ const useCoffeeStore = create(set => ({
     set({coffeeList: await response.data})
   },
   delete: async (id) => {
-    await instance.delete(`coffee/delete/${id}`)
+    await instance.delete(`/coffee/delete/${id}`)
   },
   create: async(data) => {
     const { name, year, caffine } = data
     const percent = Math.floor(caffine/8)
-    await instance.post('coffee/create',{
+    await instance.post('/coffee/create',{
       method: "POST",
       headers: {
         "Content-Type": "application/json",

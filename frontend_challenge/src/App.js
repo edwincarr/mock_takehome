@@ -1,12 +1,13 @@
 import './App.css';
 import Coffee from './Components/coffee/index.js';
+import Posts from './Components/post/index.js';
 
 
 function App() {
 
   return (
     <div className='container'>
-      <h1>Hello World!</h1>
+      <Posts/>
       <Coffee/>
     </div>
   );

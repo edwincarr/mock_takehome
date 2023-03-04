@@ -1,7 +1,7 @@
 import './coffee.css'
 import { useEffect } from 'react'
 import mug from '../assets/svgs/mug.svg'
-import useCoffeeStore from '../../services/store.js'
+import useCoffeeStore from '../../services/coffeeStore.js'
 
 const CoffeeList = () => {
   const coffeeList = useCoffeeStore((state) => state.coffeeList)
@@ -15,7 +15,7 @@ const CoffeeList = () => {
   },[updateCoffee, clearState])
 
   const coffeeDelete = (id) => {
-    deleteCoffee(id).then(e => {
+    deleteCoffee(id).then(() => {
       updateCoffee()
     })
   }

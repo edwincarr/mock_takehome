@@ -20,7 +20,7 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 router.post('/', asyncHandler(async(req, res) => {
-  const { title, coffeeId, text, rating } = req.body
+  const { title, coffeeId, text, rating } = req.body.data
 
   const post = await prisma.post.create({
     data: {

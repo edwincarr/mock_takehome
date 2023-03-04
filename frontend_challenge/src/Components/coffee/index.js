@@ -7,10 +7,10 @@ const Coffee = () => {
   const [openModal, setOpenModal] = useState(false)
 
   return (
-    <div>
+    <div className='coffee-component-container'>
       <div className='coffee-header'>
         <h3>Coffees</h3>
-        <button onClick={() => setOpenModal(!openModal)}>Modal</button>
+        <button className='modal-button' onClick={() => setOpenModal(!openModal)}>New Coffee</button>
         <CoffeeModal open={openModal}/>
       </div>
       <CoffeeList/>
