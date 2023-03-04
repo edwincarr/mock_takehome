@@ -31,14 +31,14 @@ router.get('/:id', asyncHandler(async(req, res) => {
 }))
 
 router.post('/create', asyncHandler(async(req, res) => {
-  const { name, year, content, percent } = req.body
+  const { name, year, content, percent } = req.body.data
 
   const coffee = await prisma.coffee.create({
     data: {
       name,
-      year: Number(year),
-      caffine_content: parseFloat(content),
-      caffine_percentage: parseFloat(percent)
+      year,
+      caffine_content: content,
+      caffine_percentage: percent
     }
   })
 

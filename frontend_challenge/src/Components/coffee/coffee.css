@@ -4,6 +4,7 @@
   border-left: solid 2px #9f5315;
   border-top-left-radius: 8px;
   padding: 10px;
+  width: 200px;
 }
 .coffee-name {
   font-weight: 600;
@@ -19,4 +20,15 @@
 }
 .coffee-container:hover > .coffee-delete {
   opacity: 1;
+}
+.coffee-header {
+  display: flex;
+}
+.overlay {
+  position: absolute;
+  left:50%;
+}
+.coffee-form {
+  display: flex;
+  flex-direction: column;
 }
