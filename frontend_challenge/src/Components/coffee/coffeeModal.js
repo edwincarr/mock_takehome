@@ -22,7 +22,7 @@ const CoffeeModal = ({open}) => {
   }
 
   return (
-    <div className='overlay'>
+    <div>
       <div className='modal-container'>
         <h3>New Coffee</h3>
         <form className='coffee-form' onSubmit={(e) => submitCoffeeForm(e)}>

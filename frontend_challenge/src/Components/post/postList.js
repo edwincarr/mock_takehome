@@ -24,11 +24,11 @@ const PostList = () => {
       {postList.map((post, idx) => {
 
         return (
-          <div key={idx}>
-            <div onClick={() => postDelete(post.id)}>X</div>
-            <h3>{post.title}</h3>
+          <div key={idx} className='post'>
+            <div onClick={() => postDelete(post.id)} className='post-delete'>X</div>
+            <div className='posttitle'>{post.title}</div>
             <Stars rating={post.rating}/>
-            <p>{post.text}</p>
+            <div className='posttext'>{post.text}</div>
             <p>{post.coffee_relation.name} - {post.coffee_relation.caffine_percentage} mg per oz</p>
           </div>
         )

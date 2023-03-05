@@ -12,12 +12,14 @@ const Posts = () => {
     updatePost(order)
   }
   return (
-    <div>
-      <div>
-        <h3>Posts</h3>
-        <button onClick={() => setOpenModal(!openModal)}>New Post</button>
-        <PostModal open={openModal}/>
-        <select onChange={(e) => changeOrder(e.target.value)}>
+    <div className='postlist-container'>
+      <div className='postlist-header'>
+        <div className='post-headerleft'>
+          <h2>Posts</h2>
+          <button onClick={() => setOpenModal(!openModal)} className='post-button'>New Post</button>
+            <PostModal open={openModal} onClose={() => setOpenModal(false)}/>
+        </div>
+        <select onChange={(e) => changeOrder(e.target.value)} className='postorder'>
           <option value='asc'>Asc</option>
           <option value='desc'>Desc</option>
         </select>
