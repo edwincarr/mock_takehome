@@ -1,0 +1,13 @@
+{
+  "name": "aa_mock_takehomechallenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm --prefix backend_challenge install && npm --prefix frontend_challenge install",
+    "migrate": "prisma migrate dev --prefix backend_challenge",
+    "seed": "node --prefix backend_challenge/prisma/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

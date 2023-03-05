@@ -1,11 +1,52 @@
 # App Academy Mock Takehome Challenges
 
-Welcome to a/A's take home challenge, this should be a fun project to put to practice what you've just learned from recap academy.
-There are instructions for each part (front and backend) in their respective folders.
-You are free to use any backend and frontend framework you like for this takehome.
-The requirements listed in each section are by no means a ceiling, please feel free to expand upon anything in the takehome if you have time to do so.
+<!-- GETTING STARTED -->
+## Getting Started
 
-## Submission
-In order to submit your project from this mock takehome you will need to create a new git repo for your project. You will need to write out a readme with clear instructions on how to start your solution locally. After you've finished, fillout the form, in the last section of said form there will be a place to put the link to your solution repo.
+To get a local copy up and running follow these simple example steps.
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfqjYoame7tAiIOmQdC8nkDASqg9tDhEoe-n_DdQxSuw-3QgQ/viewform?usp=sf_link">Submit</a>
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone
+   ```
+
+2. Install NPM packages using install script from root folder
+   ```sh
+   npm run install
+   ```
+
+3. Create a PSQL user with CREATEDB PASSWORD
+   ```js
+   CREATE USER <user_name> WITH CREATEDB PASSWORD <'password'>;
+   ```
+
+4. Create a PSQL Database with the user in the last step as the owner
+   ```js
+   CREATE DATABASE <database_name> WITH OWNER <user>;
+   ```
+5. Create a .env file in the backend folder
+   ```
+   DATABASE_URL=postgresql://<user_name>:<password>@localhost/<database_name>
+   PORT=5000
+   ```
+   NOTE: if you choose to use another port number do not forget to reflect that change inside the ./frontend_challenge/src/services/axios.js file
+
+6. Migrate and seed models.
+   ```sh
+   npm run migrate
+   npm run seed
+   ```
+
+7. From the backend directory start the API server
+   ```sh
+   npm start
+   ```
+
+8. Start the frontend in the frontend directory, this should open the project in your default browser. If not, navigate to http://localhost:3000
+    ```sh
+    npm start
+    ```
+
+9. Finished
