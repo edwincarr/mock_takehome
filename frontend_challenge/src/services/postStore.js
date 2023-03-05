@@ -14,7 +14,7 @@ const usePostStore = create(set => ({
       },
       params: {order}
     })
-    set({posts: await response.data})
+    set({posts: response.data})
   },
 
   delete: async (id) => {

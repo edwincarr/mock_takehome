@@ -19,25 +19,35 @@ const PostModal = ({open}) => {
     const data = {title,text,rating,coffeeId}
     createPost(data).then(() => {
       updatePost()
+      clearState()
     })
   }
+
+  const clearState = () => {
+    setTitle('')
+    setText('')
+    setRating(0)
+    setCoffeeId(0)
+  }
+
   return (
     <div>
       <div>
         <h3>Create Post</h3>
         <form onSubmit={(e) => submitPostForm(e)}>
           <label>Title: </label>
-          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}/>
+          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} required/>
           <label>Rating: </label>
-          <input type='number' value={rating} onChange={(e) => setRating(e.target.value)}/>
+          <input type='number' value={rating} onChange={(e) => setRating(e.target.value)} min='0' max='5' required/>
           <label>Coffee: </label>
-          <select value={coffeeId} onChange={(e) => setCoffeeId(e.target.value)}>
+          <select onChange={(e) => setCoffeeId(e.target.value)} required>
+            <option value='' disabled selected>Select your option</option>
             {coffeeList.map((coffee, idx) => {
               return <option key={idx} value={coffee.id}>{coffee.name}</option>
               })}
           </select>
           <label>Text: </label>
-          <textarea value={text} onChange={(e) => setText(e.target.value)}/>
+          <textarea value={text} onChange={(e) => setText(e.target.value)} required/>
           <input type='submit' value='submit'/>
         </form>
       </div>

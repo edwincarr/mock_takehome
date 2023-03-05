@@ -12,7 +12,7 @@ const useCoffeeStore = create(set => ({
       },
       params: {order}
     })
-    set({coffeeList: await response.data})
+    set({coffeeList: response.data})
   },
   delete: async (id) => {
     await instance.delete(`/coffee/delete/${id}`)
