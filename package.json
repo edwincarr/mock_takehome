@@ -4,8 +4,11 @@
   "main": "index.js",
   "scripts": {
     "install": "npm --prefix backend_challenge install && npm --prefix frontend_challenge install",
-    "migrate": "prisma migrate dev --prefix backend_challenge",
-    "seed": "node --prefix backend_challenge/prisma/seed.js"
+    "migrate": "npm exec prisma migrate dev --prefix backend_challenge/prisma",
+    "seed": "node ./backend_challenge/prisma/seed.js"
+  },
+  "prisma": {
+    "schema": "backend_challenge/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",

@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
    ```js
    CREATE DATABASE <database_name> WITH OWNER <user>;
    ```
-5. Create a .env file in the backend folder
+5. Create a .env file
    ```
    DATABASE_URL=postgresql://<user_name>:<password>@localhost/<database_name>
    PORT=5000
@@ -44,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
    npm start
    ```
 
-8. Start the frontend in the frontend directory, this should open the project in your default browser. If not, navigate to http://localhost:3000
+8. from a seperate terminal start the frontend in the frontend directory, this should open the project in your default browser. If not, navigate to http://localhost:3000
     ```sh
     npm start
     ```
