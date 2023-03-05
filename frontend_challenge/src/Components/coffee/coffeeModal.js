@@ -2,7 +2,7 @@ import './coffee.css'
 import { useState } from 'react'
 import useCoffeeStore from '../../services/coffeeStore.js'
 
-const CoffeeModal = ({open}) => {
+const CoffeeModal = ({open, onClose}) => {
   const createCoffee = useCoffeeStore((state) => state.create)
   const updateCoffee = useCoffeeStore((state) => state.fetch)
 
@@ -17,8 +17,15 @@ const CoffeeModal = ({open}) => {
     const data = {name, year, caffine}
     createCoffee(data).then(() => {
       updateCoffee()
+      onClose()
+      clearCoffee()
     }
     )
+  }
+  const clearCoffee = () => {
+    setName('')
+    setYear(0)
+    setCaffine(0)
   }
 
   return (

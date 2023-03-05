@@ -11,7 +11,7 @@ const Coffee = () => {
       <div className='coffee-header'>
         <h3>Coffees</h3>
         <button className='modal-button' onClick={() => setOpenModal(!openModal)}>New Coffee</button>
-        <CoffeeModal open={openModal}/>
+        <CoffeeModal open={openModal} onClose={() => setOpenModal(false)}/>
       </div>
       <CoffeeList/>
     </div>
